@@ -1,7 +1,4 @@
 #!/bin/bash
-cd /webapp
+cd home/centos/repo/webapps
 mvn clean package
-git add .
-git status
-git commit -m "build files in target folder"
-git push origin master
+scp home/centos/repo/webapps/target/*.war centos@172.31.56.10:/usr/share/tomcat/webapps
